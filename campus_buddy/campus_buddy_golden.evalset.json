@@ -1,0 +1,101 @@
+{
+  "eval_set_id": "campus_buddy_golden",
+  "name": "Campus Buddy Golden Evaluation Dataset",
+  "description": "Tests timetable, canteen menu, and CGPA calculation tools.",
+  "eval_cases": [
+    {
+      "eval_id": "monday_timetable",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "What classes do I have on Monday?"
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Your Monday classes are Python Programming at 09:00, Engineering Maths at 11:00, and Digital Logic Lab at 14:00."
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "get_timetable",
+                "args": {
+                  "day": "Monday"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "friday_menu",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "What's in the canteen on Friday?"
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Here's what's on the canteen menu for Friday: Pongal, Chicken Biryani, and Gulab Jamun. Sounds like a tasty menu!"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "get_canteen_menu",
+                "args": {
+                  "day": "Friday"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "cgpa_calc",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "My grade points are 9, 8 and 10 with credits 4, 3 and 3. What is my CGPA?"
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Your CGPA is 9.0. Great work!"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "calculate_cgpa",
+                "args": {
+                  "grade_points": [9, 8, 10],
+                  "credits": [4, 3, 3]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
